@@ -3,17 +3,20 @@ package com.company;
 public abstract class Vehicle {
     // vehicle can run, stop and accelerate
     private String carName = "";
-    private String carColor = "";
-    private int carSpeed = 0;
+    private String vehicleColor = "";
+    private int speed = 0;
     private boolean carAccelerating = false;
-    private boolean carStopped = true;
+    private boolean vehicleStopped = true;
 
     public Vehicle() {
     }
 
-    public Vehicle(String carName, String carColor) {
+    public Vehicle(String carName, String vehicleColor) {
         this.carName = carName;
-        this.carColor = carColor;
+        this.vehicleColor = vehicleColor;
+        this.speed= 0;
+        this.carAccelerating = false;
+        this.vehicleStopped = true;
     }
 
     public String getCarName() {
@@ -24,26 +27,19 @@ public abstract class Vehicle {
         this.carName = carName;
     }
 
-    public String getCarColor() {
-        return carColor;
+    public int getSpeed() {
+        return speed;
     }
 
-    public void setCarColor(String carColor) {
-        this.carColor = carColor;
-    }
-
-    public int getCarSpeed() {
-        return carSpeed;
-    }
-
-    public void setCarSpeed(int carSpeed) {
-        if (carSpeed == 0) {
-            setCarStopped(true);
-        }
-        else {
-            setCarStopped(false);
-        }
-        this.carSpeed = carSpeed;
+    public void setSpeed(int carSpeed) {
+//        if (carSpeed == 0) {
+//            setCarStopped(true);
+//        }
+//        else {
+//            setCarStopped(false);
+//            setCarAccelerating(true);
+//        }
+        this.speed = carSpeed;
     }
 
     public boolean isCarAccelerating() {
@@ -60,14 +56,22 @@ public abstract class Vehicle {
     }
 
     public boolean isCarStopped() {
-        return carStopped;
+        return vehicleStopped;
     }
 
     public void setCarStopped(boolean carStopped) {
         if (carStopped){
             setCarAccelerating(false);
-            setCarSpeed(0);
+            setSpeed(0);
         }
-        this.carStopped = carStopped;
+        this.vehicleStopped = carStopped;
+    }
+
+    public String getVehicleColor() {
+        return vehicleColor;
+    }
+
+    public void setVehicleColor(String vehicleColor) {
+        this.vehicleColor = vehicleColor;
     }
 }
