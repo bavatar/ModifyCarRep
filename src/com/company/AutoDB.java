@@ -26,6 +26,7 @@ public class AutoDB {
         car = new Car("Maserati", "turquoise");
         cars.add(car);
     }
+
     public String getStatusCars(){
         // The red Porsche is starting
         String outStr = "";
@@ -44,5 +45,9 @@ public class AutoDB {
             outStr += c.getCurStatus() + " and moving at " + speed + " mph\n";
         }
         return outStr;
+    }
+
+    public void addCar(Car c){
+        cars.add(c);
     }
 }
