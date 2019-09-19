@@ -37,7 +37,14 @@ public class Main {
                 System.out.println("Invalid Color of car.");
                 exit(0);
             }
-            Car car = new Car(model, color);
+
+            System.out.println("What is the name of your driver?");
+            String driver = sc.nextLine();
+            if (driver.equals("")) {
+                System.out.println("Invalid car driver.");
+                exit(0);
+            }
+            Car car = new Car(model, color, driver);
             autoDB.addCar(car);
         }
 

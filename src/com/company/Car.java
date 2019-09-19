@@ -7,6 +7,7 @@ import java.util.ArrayList;
 public class Car extends Vehicle{
     private Status curStatus = Status.STOPPED;   // Initial
     private int curSpeed = 0;
+    public Driver driver;
 
     public int getCurSpeed() {
         curSpeed = getSpeed();
@@ -45,10 +46,11 @@ public class Car extends Vehicle{
 
     //private ArrayList<Car> cars = null; place in main
 
-    public Car(String name, String color) {
+    public Car(String name, String color, String driverName) {
         // Default Constructor uses constructor of Vehicle()
         //ArrayList<Car> cars = new ArrayList<>();// Tracks mult cars
         super(name, color);
+        this.driver = new Driver(driverName);
     }
    // overloaded constructor
     // methods which return a string indicating each task the
